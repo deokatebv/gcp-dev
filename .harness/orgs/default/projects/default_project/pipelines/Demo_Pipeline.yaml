@@ -16,11 +16,5 @@ pipeline:
             shell: bash
           name: Build
           id: Build
-        - run-test:
-            script: mvn test
-            intelligence:
-              disabled: false
-          name: Test
-          id: Test
       name: Code-Clone
       id: Code_Clone
