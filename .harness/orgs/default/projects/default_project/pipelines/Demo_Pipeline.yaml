@@ -1,4 +1,14 @@
 pipeline:
+  inputs:
+    ref:
+      type: string
+      required: true
+      description: Branch or tag to check out
+  clone:
+    enabled: true
+    connector: connector_Github
+    repo: deokatebv/gcp-dev
+    ref: ${{ inputs.ref }}
   stages:
     - steps:
         - run:
@@ -6,3 +16,9 @@ pipeline:
             shell: bash
           name: Build
           id: Build
+        - run-test:
+            script: mvn test
+            intelligence:
+              disabled: false
+          name: Test
+          id: Test
