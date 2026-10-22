@@ -1,0 +1,8 @@
+pipeline:
+  stages:
+    - steps:
+        - run:
+            script: mvn packages
+            shell: bash
+          name: Build
+          id: Build
