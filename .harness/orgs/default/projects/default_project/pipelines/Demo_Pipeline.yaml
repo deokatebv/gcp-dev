@@ -22,3 +22,5 @@ pipeline:
               disabled: false
           name: Test
           id: Test
+      name: Code-Clone
+      id: Code_Clone
